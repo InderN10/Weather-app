@@ -2,7 +2,8 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import { citiesFilter } from "../utils/citiesFilter";
 
-const Search = () => {
+const Search = (props) => {
+    const { setSelectetCity } = props;
     const [countriesSearch, setCountriesSearch] = useState("");
     const [filteredData, setfilteredData] = useState([]);
     const [cities, setCities] = useState([])
@@ -14,24 +15,16 @@ const Search = () => {
             const response = await fetch("https://countriesnow.space/api/v0.1/countries");
             const result = await response.json();
             const countriesAndCity = citiesFilter(result.data);
-            console.log(countriesAndCity);
-            
             setCities(countriesAndCity);
             setfilteredData(countriesAndCity);
         } catch (error) {
-
             console.log("error", error);
         }
-        finally{
+        finally {
             setLoading(false);
         }
     };
-    // useEffect(() => {
-    //     filterData();
-    // }, [countriesSearch]);
-
     useEffect(() => {
-        console.log("Effect data worked");
         fetchData();
     }, [])
 
@@ -44,7 +37,9 @@ const Search = () => {
                 ).slice(0, 5)
         );
     };
-
+    const handleCityClick = (city) => {
+        setSelectetCity(city.split(",")[0]);
+    }
     return (
         <div>
             <div>
@@ -52,8 +47,8 @@ const Search = () => {
             </div>
             <div>
                 {countriesSearch.length > 0 &&
-                    filteredData.map((country, index) => {
-                        return <div key={index}>{country}</div>;
+                    filteredData.map((city, index) => {
+                        return <div onClick={() => handleCityClick(city)} key={index}>{city}</div>;
                     })}
             </div>
         </div>

@@ -1,9 +1,13 @@
 import React from 'react'
 
-const LeftSide = () => {
+const LeftSide = (props) => {
+  const {weather} = props;
   return (
-    <div>
-      
+    <div className='text-black'>
+      <div>{weather.date}</div>
+      <div className='text-8xl'>{weather.max_c}</div>
+      {/* <div>{weather.min_c}</div> */}
+      <div>{weather.condition}</div>
     </div>
   )
 }

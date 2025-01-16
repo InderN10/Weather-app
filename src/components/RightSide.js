@@ -1,10 +1,8 @@
 import React from 'react'
 
-const RightSide = () => {
+const RightSide = (weather) => {
   return (
-    <div>
-      
-    </div>
+    <div></div>
   )
 }
 
