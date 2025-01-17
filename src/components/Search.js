@@ -41,11 +41,17 @@ const Search = (props) => {
         setSelectetCity(city.split(",")[0]);
     }
     return (
-        <div>
-            <div>
-                <input disabled={loading} onChange={handleChange} placeholder='Search country' value={countriesSearch} />
+        <div className='w-[346px] flex-col'>
+            <div className='flex items-center'>
+                <div className='w-[30px] h-[30px] mx-2'>
+                    <img
+                        src={"./image/images.png"} />
+                </div>
+                <div>
+                    <input className='w-[300px] h-[60px] rounded-[20px] p-1 shadow-2xl' disabled={loading} onChange={handleChange} placeholder='Search country' value={countriesSearch} />
+                </div>
             </div>
-            <div>
+            <div className='text-1xl w-[300px] bg-red-200 rounded-3xl'>
                 {countriesSearch.length > 0 &&
                     filteredData.map((city, index) => {
                         return <div onClick={() => handleCityClick(city)} key={index}>{city}</div>;
