@@ -19,10 +19,10 @@ const LeftSide = (props) => {
         src={"./image/Clouds.png"}
         alt="cloudy"
       />
-    } else if(weather.condition === "Light freezing rain "){
+    } else if(weather.condition === 'Light freezing rain'){
       return <img
       src={"./image/Snow.png"}
-      alt="cloudy"
+      alt="snowy"
     />
     }
     else {

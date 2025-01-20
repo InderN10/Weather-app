@@ -18,6 +18,11 @@ const RightSide = (props) => {
         src={"./image/CloudsN.png"}
         alt="cloudy"
       />
+    } else if(weather.condition === 'Light freezing rain'){
+      return <img
+      src={"./image/Snow2.png"}
+      alt="snowy"
+    />
     }
     else {
       return <img
