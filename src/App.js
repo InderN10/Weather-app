@@ -44,9 +44,9 @@ function App() {
         <div className='w-1/2 h-screen bg-white flex flex-col justify-center items-center '>
 
           <div className='z-50'>
-            <div className='absolute top-[100px] left-[41%]'>
-              <div className='mx-24 text-red-800'>
-                {weatherLoading && <p>weather loading...</p>}
+            <div className='absolute top-[100px] left-[43%]'>
+              <div id='loader' className='mx-24'>
+                {weatherLoading && <p>loading...</p>}
               </div>
               <Search setSelectetCity={setSelectetCity} />
             </div>

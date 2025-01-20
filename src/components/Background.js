@@ -8,11 +8,13 @@ const Background = (props) => {
                     src={"./image/leftArrow.svg"}
                     style={{ width: "43px", height: "86px" }}
                     className="z-30"
+                     alt="back"
                 />
                 <img
                     src={"./image/rightArrow.png"}
                     style={{ width: "43px", height: "86px" }}
                     className="z-30"
+                    alt="back"
                 />
             </div>
             <div className="absolute w-[80px] h-[64px] mt-[180px] ml-[80px]  bg-customWhite flex">

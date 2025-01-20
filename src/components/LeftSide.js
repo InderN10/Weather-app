@@ -17,8 +17,13 @@ const LeftSide = (props) => {
     } else if (weather.condition === "Partly Cloudy " || weather.condition === "Cloudy " || weather.condition === "Overcast ") {
       return <img
         src={"./image/Clouds.png"}
-        alt="moderate rain"
+        alt="cloudy"
       />
+    } else if(weather.condition === "Light freezing rain "){
+      return <img
+      src={"./image/Snow.png"}
+      alt="cloudy"
+    />
     }
     else {
       return <img
